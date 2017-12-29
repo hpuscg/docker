@@ -12,3 +12,6 @@
 5.apt-cache policy docker-engine
 
 6.apt-get install -y docker-engine=xxxxx
+
+
+URL：http://blog.csdn.net/csdn_duomaomao/article/details/74533968
