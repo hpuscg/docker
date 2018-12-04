@@ -1,1 +1,16 @@
+1、 ubuntu14.04
+  配置文件位置: /etc/default/docker
+  docker启动关闭: service docker start / service docker stop / service docker restart
 
+2、 ubuntu16.04
+  配置文件位置: /lib/systemd/system/docker.service
+  docker启动关闭: systemctl start docker / systemctl stop docker / systemctl restart docker
+
+3、 Error response from daemon: Cannot start container {id}: 
+[8] System error: open /sys/fs/cgroup/cpu,cpuacct/init.scope/system.slice/docker-{id}.scope/cpu.shares: no such file or directory
+
+   Wherein Dmitry Smirnov says you can add --exec-opt native.cgroupdriver=cgroupfs to DOCKER_OPTS in /etc/default/docker.（14.04）
+   
+   Wherein Dmitry Smirnov says you can add --exec-opt native.cgroupdriver=cgroupfs to DOCKER_OPTS in /lib/systemd/system/docker.service （16.04）
+
+   Answer:  https://stackoverflow.com/questions/32845917/docker-cannot-start-container-cpu-shares-no-such-file-or-directory
